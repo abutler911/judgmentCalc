@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Judgment Calculator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container mt-5">
+      <h1>Judgment Calculator</h1>
+
+      <!-- Judgment Input Form -->
+      <div class="card p-4 bg-secondary text-light">
+        <h3>Judgment Details</h3>
+        <div class="mb-3">
+          <label class="form-label">Judgment Amount ($)</label>
+          <input type="number" id="judgment-amount" class="form-control" />
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Date of Judgment</label>
+          <input type="date" id="judgment-date" class="form-control" />
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Annual Interest Rate (%)</label>
+          <input
+            type="number"
+            id="interest-rate"
+            class="form-control"
+            value="10"
+          />
+        </div>
+        <button class="btn btn-success w-100" id="calculate-btn">
+          Calculate
+        </button>
+      </div>
+
+      <!-- Display Results -->
+      <div class="card judgment-summary p-4 mt-3">
+        <h3>Updated Judgment Amount</h3>
+        <span id="updated-amount">$0.00</span>
+
+        <h5>Accrued Interest</h5>
+        <span id="accrued-interest">$0.00</span>
+
+        <h5>Total Payments</h5>
+        <span id="total-payments">$0.00</span>
+      </div>
+
+      <!-- Payment Section -->
+      <div class="card p-4 mt-3 bg-secondary text-light">
+        <h3>Payments</h3>
+        <div class="mb-3">
+          <label class="form-label">Date of Payment</label>
+          <input type="date" id="payment-date" class="form-control" />
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Check Number</label>
+          <input type="text" id="check-number" class="form-control" />
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Check Amount ($)</label>
+          <input type="number" id="payment-amount" class="form-control" />
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Notes (Optional)</label>
+          <textarea id="payment-notes" class="form-control" rows="2"></textarea>
+        </div>
+        <button class="btn btn-warning w-100" id="add-payment-btn">
+          Add Payment
+        </button>
+
+        <ul class="list-group mt-3" id="payment-list"></ul>
+      </div>
+    </div>
+
+    <script type="module" src="script.js"></script>
+  </body>
+</html>
